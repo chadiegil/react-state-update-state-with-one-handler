@@ -12,8 +12,10 @@ function App() {
   // const handleChange = (e) => {
   //   setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   // };
+
   const handleChange = (e) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    console.log(e);
   };
 
   console.log(inputs);
@@ -21,12 +23,22 @@ function App() {
   return (
     <>
       <h1>Update change in one handler</h1>
+      <p>username: {inputs.username}</p>
+      <p>email: {inputs.email}</p>
+      <p>password: {inputs.password}</p>
       <input
         required
         type="text"
         placeholder="username"
         name="username"
         onChange={handleChange}
+      />
+      <input
+        required
+        type="text"
+        placeholder="username"
+        onChange={handleChange}
+        value={inputs.username}
       />
       <input
         required
